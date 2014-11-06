@@ -7,3 +7,8 @@ This repository will cover anything involving the configuration and use of these
 
 ### SiteTypeCV
 It's been pointed out that SiteTypeCV was introduced in ODM 1.1 (and corresponding WOF services). As a result, WOF endpoints that are based on service version 1.0 or are pointing to ODM 1.0 databases will not include a SiteType in the response. This may be the reason why the CZO shared vocabularies don't have a site type yet, though a [SiteTypeCV is available on the CUAHSI HIS ODM 1.1 CV's.](http://his.cuahsi.org/mastercvreg/edit_cv11.aspx?tbl=SiteTypeCV&id=853578079)
+
+### Variables, VariableName CV, and occurrence of the same variable more than once on a site
+* So far VariableName seems to be mostly in good shape (ie, for the one CZO for which I've assessed the GetVariables response, I only found one case of sloppiness -- two otherwise identical variable names except for the case used)
+* Some VariableNames have an associated sampled medium, but many do not. eg, a Temperature w/o a SampleMedium or SiteType is potentially ambiguous.
+* In some sites in the CZO Central WOF services -- but also in other WOF services -- the same variable name (ie, VariableNameCV) occurs more than once. I don't see any systematic information that can help me interpret each of those occurrences in a GetSiteInfo response. For example, are they two air temperature sensors at two different elevations along a tower? Or are they at the same depth, but simply different sensor deployments (eg, possibly different sensor models used at different times)? In order to map this information into vizer via an automatic metadata harvester, I need to be able to sort this out and code for it based on information in the response.
