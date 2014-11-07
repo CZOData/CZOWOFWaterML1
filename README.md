@@ -15,3 +15,6 @@ It's been pointed out that SiteTypeCV was introduced in ODM 1.1 (and correspondi
 
 ### "notes" content
 * Currently the CZO WOF 1.0 GetSiteInfo response (at least for the Southern Sierra) has a "notes" element with state and county content; but those elements (or attributes -- can't remember) are empty. It would be very helpful to populate them as part of the process of standing up these WOF services and adding new sites.
+
+### ulmo parsing issues with some elements in GetSiteInfo?
+get_site_info response for some data series attributes (_method, _quality_control_level, _source, value_count, and variable_time_interval) are returned prepended with the WaterML namespace url; it should be stripped, as done with all other attributes. Will have to investigate if that's a problem with ulmo parsing or with the CUAHSI response encoding.
