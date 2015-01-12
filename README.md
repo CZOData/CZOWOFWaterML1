@@ -8,6 +8,7 @@ This repository will cover anything involving the configuration and use of these
 ### SiteTypeCV
 * It's been pointed out that SiteTypeCV was introduced in ODM 1.1 (and corresponding WOF services). As a result, WOF endpoints that are based on service version 1.0 or are pointing to ODM 1.0 databases will not include a SiteType in the response. This may be the reason why the CZO shared vocabularies don't have a site type yet, though a [SiteTypeCV is available on the CUAHSI HIS ODM 1.1 CV's.](http://his.cuahsi.org/mastercvreg/edit_cv11.aspx?tbl=SiteTypeCV&id=853578079)
 * I'm not seeing SiteType entries in the new CZO WOF 1.1 GetSiteInfo responses, at least for the Christina River end point. [See this example (a REST request).](http://water.sdsc.edu/czo_udel/REST/waterml_1_1.svc/siteinfo?location=czo_udel:STATION4)
+* See [discussions on this topic in issue #1](https://github.com/CZOData/CZOWOFWaterML1/issues/1)
 
 ### Variables, VariableName CV, and occurrence of the same variable more than once on a site
 * So far VariableName seems to be mostly in good shape (ie, for the one CZO for which I've assessed the GetVariables response, I only found one case of sloppiness -- two otherwise identical variable names except for the case used)
